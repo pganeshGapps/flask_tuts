@@ -18,13 +18,23 @@ def gp():
 # Passing variable as argument
 @app.route('/profile/<username>')
 def profile(username):
-	return '<h1> Hi %s</h1>'%username
+	return '<h1> Hi %s</h1>'%username	
 
 # Passing string as an argument doesn't require to specify data type but others do require(int,float).
 @app.route('/post/<int:post_id>')
 def show_post_id(post_id):
 	return '<h1>Post ID is : %d</h1>' % int(post_id)
-	
+
+''' 3 '''
+# HTTP methods : default is GET
+from flask import request
+@app.route('/bacon', methods=['GET','POST'])
+def bacon():
+	if request.method == 'POST':
+		return 'You are using POST method.'
+	else:
+		return 'Most probably you are using GET! '
+
 
 
 if __name__=="__main__":
