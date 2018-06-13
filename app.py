@@ -46,6 +46,12 @@ def profile(name):
 ''' 5 '''
 # linking css file to html style.css/ filename.css
 
+''' 6 '''
+# Mapping multiple URLs
+@app.route('/')
+@app.route('/<user>')
+def throw_msg(user=None):
+	return render_template("user.html", user= user)
 
 if __name__=="__main__":
 	app.run(debug=True)
