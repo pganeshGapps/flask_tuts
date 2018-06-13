@@ -43,6 +43,8 @@ from flask import render_template
 def profile(name):
 	return render_template("profile.html", name=name)
 
+''' 5 '''
+# linking css file to html style.css/ filename.css
 
 
 if __name__=="__main__":
