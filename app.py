@@ -35,6 +35,14 @@ def bacon():
 	else:
 		return 'Most probably you are using GET! '
 
+''' 4 '''
+# render html file/ template
+# that html file should be in templates folder
+from flask import render_template
+@app.route('/profile/<name>')
+def profile(name):
+	return render_template("profile.html", name=name)
+
 
 
 if __name__=="__main__":
