@@ -53,6 +53,13 @@ def profile(name):
 def throw_msg(user=None):
 	return render_template("user.html", user= user)
 
+''' 7 '''
+# Passing objects into templates
+@app.route('/shopping')
+def shopping():
+	food = ['Rice', 'Curry', 'Bread', 'Vegetables']
+	return render_template("shopping.html", food=food)
+
 if __name__=="__main__":
 	app.run(debug=True)
 
